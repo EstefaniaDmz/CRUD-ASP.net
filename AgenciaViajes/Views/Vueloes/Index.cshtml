@@ -1,0 +1,113 @@
+﻿@model IEnumerable<AgenciaViajes.Models.Vuelo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CiudadOrigen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoOrigen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaisOrigen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CiudadDestino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoDestino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaisDestino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlazasTotales)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaCrea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaModifica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdUsuarioCreaNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdUsuarioModificaNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CiudadOrigen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoOrigen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaisOrigen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CiudadDestino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoDestino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaisDestino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlazasTotales)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCrea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaModifica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUsuarioCreaNavigation.IdUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUsuarioModificaNavigation.IdUsuario)
+            </td>
+            <td>
+                    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.IdVuelo">Edit</a> |
+                    <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.IdVuelo">Details</a> |
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.IdVuelo">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
